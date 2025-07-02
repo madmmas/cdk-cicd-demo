@@ -10,3 +10,4 @@ The construct defines an interface (`CdkCicdDemoProps`) to configure the visibil
 * `npm run build`   compile typescript to js
 * `npm run watch`   watch for changes and compile
 * `npm run test`    perform the jest unit tests
+# cdk-cicd-demo
