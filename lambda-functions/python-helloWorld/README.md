@@ -105,7 +105,7 @@ The SAM CLI can also emulate your application's API. Use the `sam local start-ap
 
 ```bash
 python-helloWorld$ sam local start-api
-python-helloWorld$ curl http://localhost:3000/
+python-helloWorld$ curl http://localhost:3000/hello
 ```
 
 The SAM CLI reads the application template to determine the API's routes and the functions that they invoke. The `Events` property on each function's definition includes the route and method for each path.
