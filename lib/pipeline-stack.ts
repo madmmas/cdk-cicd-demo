@@ -1,6 +1,7 @@
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import * as pipelines from 'aws-cdk-lib/pipelines';
+import { WebserviceStage } from './webservice_stage';
 
 export class PipelineStack extends cdk.Stack {
 
@@ -21,5 +22,7 @@ export class PipelineStack extends cdk.Stack {
                 ]
             })
         });
+
+        pipeline.addStage(new WebserviceStage(this, 'Pre-Prod'));
     }
 }
