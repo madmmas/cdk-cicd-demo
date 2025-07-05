@@ -11,3 +11,4 @@ cdk.out
 # ignore .vscode directory
 .vscode
 .DS_Store
+.aws-sam
