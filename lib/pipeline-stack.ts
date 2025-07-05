@@ -28,7 +28,7 @@ export class PipelineStack extends cdk.Stack {
         const preProdStage = new WebserviceStage(this, 'Pre-Prod');
         
         pipeline.addStage(preProdStage, {
-            pre: [new pipelines.ManualApprovalStep('ManualApproval')],
+            // pre: [new pipelines.ManualApprovalStep('ManualApproval')],
             post: [
                 new pipelines.ShellStep('IntegrationTests', {
                     input: source,
