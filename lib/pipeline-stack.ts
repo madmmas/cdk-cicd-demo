@@ -10,7 +10,7 @@ export class PipelineStack extends cdk.Stack {
         const pipeline = new pipelines.CodePipeline(this, 'Pipeline', {
             pipelineName: 'MyAppPipeline',
             synth: new pipelines.ShellStep('Synth', {
-                input: pipelines.CodePipelineSource.gitHub('madmmas', 'cdk-cicd-demo', {
+                input: pipelines.CodePipelineSource.gitHub('madmmas/cdk-cicd-demo', 'main', {
                     authentication: cdk.SecretValue.secretsManager('aws-cdk-cicd'),
                 }),
                 commands: [
