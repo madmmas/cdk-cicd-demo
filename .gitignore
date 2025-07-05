@@ -7,3 +7,7 @@ node_modules
 # CDK asset staging directory
 .cdk.staging
 cdk.out
+
+# ignore .vscode directory
+.vscode
+.DS_Store
