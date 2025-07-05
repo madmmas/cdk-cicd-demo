@@ -23,6 +23,10 @@ export class PipelineStack extends cdk.Stack {
             })
         });
 
-        pipeline.addStage(new WebserviceStage(this, 'Pre-Prod'));
+        const preProdStage = new WebserviceStage(this, 'Pre-Prod');
+        
+        pipeline.addStage(preProdStage, {
+            pre: [new pipelines.ManualApprovalStep('PromoteToProd')]
+        });
     }
 }
