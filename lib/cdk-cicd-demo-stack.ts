@@ -4,7 +4,6 @@ import { Construct } from 'constructs';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as apigateway from 'aws-cdk-lib/aws-apigateway';
 
-
 export class CdkCicdDemoStack extends cdk.Stack {
   
   urlOutput: cdk.CfnOutput;
@@ -13,9 +12,9 @@ export class CdkCicdDemoStack extends cdk.Stack {
     super(scope, id, props);
 
     const handler = new lambda.Function(this, 'Handler', {
-      code: new lambda.AssetCode(path.resolve(__dirname, 'lambda')),
+      code: new lambda.AssetCode(path.resolve(__dirname, '../lambda')),
       handler: 'handler.handler',
-      runtime: lambda.Runtime.PYTHON_3_9,
+      runtime: lambda.Runtime.PYTHON_3_12,
     });
 
     const gw = new apigateway.LambdaRestApi(this, 'ApiGateway', {
